@@ -15,7 +15,11 @@ db.init_app(app)
 
 @app.route('/')
 def home():
-    return '<h1>Zoo app</h1>'
+    response = make_response(
+        '<h1>Zoo app</h1>',
+        200
+    )
+    return response
 
 @app.route('/animal/<int:id>')
 def animal_by_id(id):
